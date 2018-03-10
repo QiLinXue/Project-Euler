@@ -5,7 +5,7 @@ What is the largest prime factor of the number 600851475143 ?
 */
 
 class Problem3 {
-    
+
     public static void main(String[] args) {
         long startTime = System.nanoTime();
         long x = 600851475143L;
@@ -19,7 +19,6 @@ class Problem3 {
         long totalTime = endTime - startTime;
         System.out.println("total time: "+totalTime);
     }
-
 
 
 }
