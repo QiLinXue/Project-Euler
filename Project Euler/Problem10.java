@@ -7,7 +7,7 @@ class Problem10{
 
     //Sieve of Eratosthenes
     static void sieveOfEratosthenes(int n){
-        int primeSum = 0;
+        long primeSum = 0L;
 		// Create a boolean array "prime[0..n]" and initialize
 		// all entries it as true. A value in prime[i] will
 		// finally be false if i is Not a prime, else true.
