@@ -1,4 +1,4 @@
-class Problem12{
+class Problem012{
     public static void main(String[] args) {
         boolean finished = false;
         int i = 0;

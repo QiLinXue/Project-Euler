@@ -1,4 +1,4 @@
-class Problem11{
+class Problem011{
     public static int[][] longAssArray =
     {
     {8,2,22,97,38,15,0,40,0,75,04,05,07,78,52,12,50,77,91,8},
