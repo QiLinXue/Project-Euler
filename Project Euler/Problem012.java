@@ -1,29 +1,35 @@
+/*
+
+What is the value of the first triangle number to have over five hundred divisors?
+
+*/
+
+// 03/09/2018: 4772641000 ns
+// 07/26/2018: 192079699 ns
+
 class Problem012{
     public static void main(String[] args) {
-        boolean finished = false;
-        int i = 0;
+        long startTime = System.nanoTime();
+
+        //Start Code
+        int i = 1;
         int triangle = 0;
-
-        while (!finished){
+        while(divisors(triangle) <= 500){
+            triangle += i;
             i++;
-            triangle = (i*(i+1))/2;
-            System.out.println(triangle);
-            if(divisors(triangle) > 500){
-                finished = true;
-                System.out.println(triangle);
-            }
         }
+        //End Code
 
-        //System.out.println(divisors(28));
+        System.out.println(triangle);
+
+        long endTime   = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println("total time: "+ totalTime);
     }
 
     static int divisors(int n){
         int counter = 0;
-        for(int i=1;i*i<n;i++){
-            if(n % i == 0){
-                counter+=2;
-            }
-        }
+        for(int i = 1; i*i < n; i++) if(n % i == 0) counter+=2;
         return counter;
     }
 
