@@ -4,19 +4,24 @@ If we list all the natural numbers below 10 that are multiples of 3 or 5, we get
 Find the sum of all the multiples of 3 or 5 below 1000.
 */
 
+/*
+
+03/09/2018: 196447100 ns
+07/25/2018: 194177900 ns
+
+*/
+
 class Problem001{
     public static void main(String[] args) {
         long startTime = System.nanoTime();
 
-        int x = 1;
         int sum = 0;
-        while(x<1000){
-            if(x % 3 == 0 || x % 5 == 0){
-                sum = sum + x;
-            }
-            x++;
+        for(int i=1;i<1000;i++){
+            if(i % 3 == 0 || i % 5 == 0) sum+=i;
         }
+
         System.out.println(sum);
+
         long endTime   = System.nanoTime();
         long totalTime = endTime - startTime;
         System.out.println("total time: "+totalTime);
