@@ -15,6 +15,7 @@ class Problem005{
         for(int i=19;i>=2;i--) largestMultiple = lcm(largestMultiple,i);
         System.out.println(largestMultiple);
         //End Code
+        
         long endTime   = System.nanoTime();
         long totalTime = endTime - startTime;
         System.out.println("total time: "+totalTime);
