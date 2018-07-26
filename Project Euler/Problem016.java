@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 /*
 
 What is the sum of the digits of 2^1000
@@ -6,7 +8,7 @@ What is the sum of the digits of 2^1000
 
 //07/26/2018: 41471500 ns
 
-import java.math.BigInteger;
+
 class Problem016{
     public static void main(String[] args) {
         long startTime = System.nanoTime();
