@@ -10,7 +10,7 @@ class Problem3 {
         long startTime = System.nanoTime();
         long x = 600851475143L;
         for (long z = 2L; z*z <= x; z++) {
-            if (x%z == 0 && AllMethods.isPrime(z)) {
+            if (x%z == 0 && isPrime(z)) {
                 System.out.println(z);
             }
         }
@@ -18,6 +18,15 @@ class Problem3 {
         long endTime   = System.nanoTime();
         long totalTime = endTime - startTime;
         System.out.println("total time: "+totalTime);
+    }
+
+    public static boolean isPrime(long num) {
+        for (long i=2; i<num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 

@@ -7,14 +7,12 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 class Problem4{
     public static void main(String[] args) {
         long startTime = System.nanoTime();
-        //int testNumber = Integer.parseInt(System.console().readLine());
-        //System.out.println(isPalindrome(testNumber));
 
         //Very inefficient
         int largestPalindrome = 0;
         for(int i=100;i<10000;i++){
             for(int j=i;j<10000;j++){
-                if(AllMethods.isPalindrome(i*j) && (i*j)>largestPalindrome){
+                if(isPalindrome(i*j) && (i*j)>largestPalindrome){
                     largestPalindrome = i*j;
                     System.out.println(largestPalindrome);
                 }
@@ -24,18 +22,16 @@ class Problem4{
         long totalTime = endTime - startTime;
         System.out.println("total time: "+totalTime);
     }
-    /*
-    //Algorithm 1
-    static boolean isPalindrome(int testInteger){
-        String testString = Integer.toString(testInteger);
-        for(int i = 0; i<testString.length()/2; i++){
-            if(testString.charAt(i) != testString.charAt(testString.length()-i-1)){
-                return false;
-            }
-        }
-        return true;
-    }
-    */
 
-    //Algorithm 2
+    public static boolean isPalindrome(int x) {
+           if (x<0 || (x!=0 && x%10==0)) return false;
+               int rev = 0;
+               while (x>rev){
+                      rev = rev*10 + x%10;
+                         x = x/10;
+               }
+           return (x==rev || x==rev/10);
+    }
+
+
 }

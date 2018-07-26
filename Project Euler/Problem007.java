@@ -15,7 +15,7 @@ class Problem7{
         while(primeCounter < 10001){
             numberCounter+=2;
 
-            if(AllMethods.isPrime(numberCounter)){
+            if(isPrime(numberCounter)){
                 primeCounter++;
             }
         }
@@ -25,6 +25,15 @@ class Problem7{
         long endTime   = System.nanoTime();
         long totalTime = endTime - startTime;
         System.out.println("total time: "+totalTime);
+    }
+
+    public static boolean isPrime(long num) {
+        for (long i=2; i<num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }
