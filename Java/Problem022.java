@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /*
 
 Using the array names containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score.
@@ -9,8 +11,6 @@ What is the total of all the name scores in the file?
 */
 
 // 07/26/2018: 10631900 ns
-
-import java.util.Arrays;
 
 class Problem022{
     public static void main(String[] args) {
