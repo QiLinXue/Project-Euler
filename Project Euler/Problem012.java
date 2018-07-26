@@ -12,12 +12,8 @@ class Problem012{
         long startTime = System.nanoTime();
 
         //Start Code
-        int i = 1;
         int triangle = 0;
-        while(divisors(triangle) <= 500){
-            triangle += i;
-            i++;
-        }
+        for(int i=1; divisors(triangle) <= 500; i++) triangle += i;
         //End Code
 
         System.out.println(triangle);
