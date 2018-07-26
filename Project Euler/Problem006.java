@@ -17,7 +17,9 @@ class Problem006{
     public static void main(String[] args) {
         long startTime = System.nanoTime();
 
+        //Start Code
         System.out.println(squareOfSums(100) - sumOfSquares(100));
+        //End Code
 
         long endTime   = System.nanoTime();
         long totalTime = endTime - startTime;
