@@ -12,6 +12,7 @@ class Problem002{
     public static void main(String[] args) {
         long startTime = System.nanoTime();
 
+        //Code Starts
         int x1 = 1, x2 = 1, sum = 0;
         while(x2 < 4000000){
             if(x2 % 2 == 0) sum = sum + x2;
@@ -19,6 +20,7 @@ class Problem002{
             x1 = x2 - x1;
         }
         System.out.println(sum);
+        //Code Ends
 
         long endTime   = System.nanoTime();
         long totalTime = endTime - startTime;
