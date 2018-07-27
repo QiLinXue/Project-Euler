@@ -7,13 +7,70 @@ What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 
 */
 
 // 07/26/2018: 1937583300 ns
+// 07/27/2018: 1014500 ns
+
 class Problem024{
+    static boolean[] digits = new boolean[10];
+    static int[] p = new int[10];
+    static int permCounter = 0;
+
     public static void main(String[] args) {
         long startTime = System.nanoTime();
 
-        //LMAOOOOOOO
+        //archivedMethod(); //use this for a very inefficient method
+
         //Code Starts
-        String[] permutations = new String[3628800];
+        for(int i = 0; i < digits.length; i++) digits[i] = true;
+        int n = 1000000;
+        int pSum = 0;
+        for(int h=9;h>0;h--){
+            for(int i=0;i<9;i++){
+                if(pSum+i*f(h) > n){
+                    updateDigits(i-1);
+                    pSum += (i-1)*f(h);
+                    break;
+                }
+            }
+        }
+
+        for(int i=0;i<9;i++) System.out.print(p[i]);
+        System.out.println();
+        //Code Ends
+
+        long endTime   = System.nanoTime();
+        long totalTime = endTime - startTime;
+        System.out.println(totalTime);
+
+    }
+
+    static void updateDigits(int n){
+        boolean didIFindIt = false;
+        int i = 0, falseCounter = 0;
+        while(!didIFindIt){
+            if(digits[i+falseCounter]){
+                if(i == n){
+                    digits[i+falseCounter] = false;
+                    p[permCounter] = i+falseCounter;
+                    permCounter++;
+                    break;
+                }
+                i++;
+
+            }
+            else falseCounter++;
+        }
+    }
+
+    static int f(int n){
+        int product = 1;
+        for(int i=2;i<=n;i++) product*=i;
+        return product;
+    }
+
+    //Staircase to heaven
+    //Below is the archived
+    static void archivedMethod(){
+        String[] ps = new String[3628800];
 
         String test = "";
         int z=0;
@@ -37,7 +94,7 @@ class Problem024{
                                                                             for(int j=0;j<10;j++){
                                                                                 if(j!=a&&j!=b&&j!=c&&j!=d&&j!=e&&j!=f&&j!=g&&j!=h&&j!=i){
                                                                                     test = ""+a+b+c+d+e+f+g+h+i+j;
-                                                                                    permutations[z]=test;
+                                                                                    ps[z]=test;
                                                                                     z++;
                                                                                 }
                                                                             }
@@ -59,12 +116,6 @@ class Problem024{
             }
         }
 
-        System.out.println(permutations[1000000-1]);
-        //Code Ends
-
-        long endTime   = System.nanoTime();
-        long totalTime = endTime - startTime;
-        System.out.println(totalTime);
-
+        System.out.println(ps[1000000-1]);
     }
 }
