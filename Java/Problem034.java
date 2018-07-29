@@ -8,7 +8,7 @@ Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 
 */
 
-// 07/28/2018: 151598500 ns
+// 07/28/2018: 60342500 ns
 
 class Problem034{
     public static void main(String[] args) {
@@ -16,7 +16,7 @@ class Problem034{
 
         //Code Starts
         int sum = 0;
-        for(int i = 10; i < 1000000; i++) if(factorialProduct(i) == i) sum+= i;
+        for(int i = 10; i < 100000; i++) if(factorialProduct(i) == i) sum+= i;
         System.out.println(sum);
         //Code Ends
 
