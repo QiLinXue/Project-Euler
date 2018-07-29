@@ -11,7 +11,7 @@ Find the sum of all the positive integers which cannot be written as the sum of 
 NOTE: I didn't do use any mathematical tricks yet
 */
 
-// 07/26/2018: 1348717800 ns
+//07/26/2018: 1348717800 ns
 
 class Problem023{
     public static void main(String[] args) {
@@ -45,9 +45,11 @@ class Problem023{
         System.out.println(totalTime);
     }
 
+    //TODO make this more efficient by only checking up to sqrt of n
     static int sum(int n){
         int sum = 1;
         for(int i=2;i<n;i++) if(n % i == 0) sum += i;
         return sum;
     }
+
 }
