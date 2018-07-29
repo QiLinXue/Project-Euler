@@ -17,6 +17,7 @@ class Problem045{
     public static void main(String[] args) {
         long startTime = System.nanoTime();
 
+        //Start Code
         //Create Arrays
         int length = 100000;
         int[] triNum = new int[length], penNum = new int[length], hexNum = new int[length];
