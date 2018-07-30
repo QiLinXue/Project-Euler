@@ -11,7 +11,7 @@ Which prime, below one-million, can be written as the sum of the most consecutiv
 
 */
 
-// 07/29/2018: 41407700
+// 07/29/2018: 41407700 ns
 
 class Problem050{
     public static void main(String[] args) {
