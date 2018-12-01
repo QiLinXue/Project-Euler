@@ -1,0 +1,1 @@
+Total[Select[Table[Fibonacci[n],{n,4000000}], Mod[#, 2] == 0 &]]
